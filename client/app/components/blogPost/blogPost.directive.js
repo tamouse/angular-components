@@ -12,7 +12,10 @@ const blogPostDirective = () => {
     scope: {
       post: '='
     },
+    bindToController: true,
     restrict: 'E',
     replace: true
   };
 };
+
+export {blogPostDirective};
