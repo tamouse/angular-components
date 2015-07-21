@@ -1,6 +1,7 @@
-// TODO: include the directive
+// DONE: include the directive
 import angular from 'angular';
 import uiRouter from 'angular-ui-router';
+import {blogPostDirective} from './blogPost.directive';
 
 const blogPost = angular.module('blogPost', [uiRouter])
   .config(function($stateProvider) {
@@ -8,11 +9,14 @@ const blogPost = angular.module('blogPost', [uiRouter])
       url: '/blog/:title',
       // setup attr to accept post from controller
       template: '<blog-post post="post"></blog-post>',
-      // TODO: configure the resolve to work
+      // DONE: configure the resolve to work
       // with a controller here
+      controller: function($scope, post) {
+        $scope.post = post;
+      },
       resolve: {
         post: function(Posts, $stateParams) {
-          // get the cpost based on title
+          // get the post based on title
           // in url
           let {title} = $stateParams;
           // slug generation should def be a server
@@ -23,4 +27,6 @@ const blogPost = angular.module('blogPost', [uiRouter])
       }
     });
   })
-  .directive('blogPost' /* TODO: register the directive here*/)
+  .directive('blogPost' /* DONE: register the directive here*/, blogPostDirective);
+
+export {blogPost};
