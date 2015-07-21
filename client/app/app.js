@@ -15,23 +15,28 @@ import {appDirective} from './app.directive';
 import angular from 'angular';
 import uiRouter from 'angular-ui-router';
 import ngAnimate from 'angular-animate';
+import ngResource from 'angular-resource';
 // because we exported a named variable
 // without using default keyword
 // we must import it with the brackets
 import {home} from './components/home/home';
 import {blog} from './components/blog/blog';
-// TODO: register common with app
-// TODO: register shared with app
+// DONE: register common with app
+import {common} from './components/common/common';
+// DONE: register shared with app
+import {shared} from './shared/shared';
 
 angular.module('app', [
   uiRouter,
   ngAnimate,
+  ngResource,
   // home is the module, the angular module
   // because that's what we exported in home.js
   // all angular modules have a name
   // property who's value is the name you set the
   // module to be
   home.name,
-  blog.name
+  blog.name,
+  shared.name
 ])
 .directive('app', appDirective);

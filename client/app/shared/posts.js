@@ -1,11 +1,12 @@
-// TODO: create factory for getting blog posts from api server
+// DONE: create factory for getting blog posts from api server
 // and removing static data out from blogComponent and replacing
 // it with this factory
 
-const posts = ($http, API) => {
-  // TODO: create crud methods
-  // use ES2015 method, property shortcuts
-  return {};
+const posts = ($resource, API) => {
+  return $resource(API.url + '/posts');
+
 };
 
-posts.$inject = ['$http', 'API'];
+posts.$inject = ['$resource', 'API'];
+
+export {posts};
