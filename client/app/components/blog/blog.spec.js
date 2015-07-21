@@ -2,6 +2,7 @@ import {blog} from './blog';
 import {blogDirective} from './blog.directive';
 import template from './blog.html';
 import {BlogController} from './blog.controller';
+import {posts} from '../../shared/posts';
 
 describe('Blog', () => {
   let $rootScope;
@@ -46,7 +47,7 @@ describe('Blog', () => {
 
   describe('controller', ()=> {
     it('should have blog posts', ()=> {
-      const controller = makeController();
+      const controller = makeController(posts());
       expect(controller.posts).to.be.an('array');
       expect(controller.posts[0]).to.have.property('author');
       expect(controller.posts[0]).to.have.property('title');
