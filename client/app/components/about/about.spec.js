@@ -1,6 +1,6 @@
 import {about} from './about'
 import {AboutController} from './about.controller';
-import {aboutdirective} from './about.directive';
+import {aboutDirective} from './about.directive';
 import template from './about.html';
 
 describe('About', ()=>{
