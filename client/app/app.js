@@ -37,6 +37,7 @@ angular.module('app', [
   // module to be
   home.name,
   blog.name,
+  common.name,
   shared.name
 ])
 .directive('app', appDirective);
