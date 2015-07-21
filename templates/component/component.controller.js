@@ -1,6 +1,6 @@
-// TODO: export the controller
+// DONE: export the controller
 
-class <%= upCaseName %>Controller {
+export class <%= upCaseName %>Controller {
   constructor() {
     this.greeting = '<%= upCaseName %>Controller!';
   }
