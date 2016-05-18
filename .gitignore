@@ -1,5 +1,2 @@
-node_modules
-*.log
-DS_Store
-dist
-client/lib
+dist/
+node_modules/
